@@ -2,10 +2,10 @@ from sensor import Sensor
 
 class Alarm(object):
 
-    def __init__(self):
+    def __init__(self, sensor=None):
         self._low_pressure_threshold = 17
         self._high_pressure_threshold = 21
-        self._sensor = Sensor()
+        self._sensor = sensor if sensor is not None else Sensor()
         self._is_alarm_on = False
         
     def check(self):
